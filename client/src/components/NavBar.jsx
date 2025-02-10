@@ -42,7 +42,7 @@ const NavBar = () => {
           <div className="hidden md:flex items-center space-x-8">
             {NAV_LINKS.map((link) => (
               <Link
-                key={link.name}
+              key={link.name}
                 to={link.path}
                 className={`transition-colors duration-300 font-medium hover:text-blue-500 ${
                   isScrolled ? "text-white" : "text-white"

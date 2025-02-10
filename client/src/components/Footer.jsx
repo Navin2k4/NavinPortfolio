@@ -5,7 +5,7 @@ import { SOCIAL_LINKS, footerLinks } from "../utils/utilities";
 
 const Footer = () => {
   const location = useLocation();
-  const disabledPages = ["/contact"];
+  const disabledPages = ["/contact",'/admin'];
 
   if (disabledPages.includes(location.pathname)) {
     return null;
