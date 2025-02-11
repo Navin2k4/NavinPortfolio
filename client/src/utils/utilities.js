@@ -31,7 +31,7 @@ export const projects = [
     description:
       "Expert care online—book consults, prescription refills, and follow-ups anytime, anywhere. Your health, simplified.",
     tags: ["NextJs", "ShadCN", "PostgreSQL", "Supabase"],
-    image: "/skipthedoctor.png",
+    image: "/std.png",
     category: "NextJs",
     demoLink: "https://skipthedoctor.ca/",
     githubLink: "#",
@@ -63,7 +63,7 @@ export const projects = [
     description:
       "Expert care online—book consults, prescription refills, and follow-ups anytime, anywhere. Your health, simplified.",
     tags: ["NextJs", "ShadCN", "PostgreSQL", "Supabase"],
-    image: "/skiptheclinic.png",
+    image: "/stc.png",
     category: "NextJs",
     demoLink: "https://skiptheclinic.ca/",
     githubLink: "#",
