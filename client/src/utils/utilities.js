@@ -4,7 +4,7 @@ export const projects = [
     description:
       "A comprehensive academic management platform designed for VCET's ecosystem. Streamline administrative processes, enhance communication, and maintain transparency across all departments.",
     tags: ["React", "Node.js", "MongoDB", "Tailwind"],
-    image: "/src/assets/projects/vcetconnect.png",
+    image: "/vcetconnect.png",
     category: "React",
     demoLink: "https://vcet-connect.onrender.com/",
     githubLink: "#",
@@ -20,7 +20,7 @@ export const projects = [
     description:
       "A platform to report issues, collaborate with authorities, and make your community better. Together, we can create positive change.",
     tags: ["React", "Node.js", "MongoDB", "React Prime"],
-    image: "/src/assets/projects/urbanuplift.png",
+    image: "/urbanuplift.png",
     category: "React",
     demoLink: "https://themainone.onrender.com/",
     githubLink: "#",
@@ -31,7 +31,7 @@ export const projects = [
     description:
       "Expert care online—book consults, prescription refills, and follow-ups anytime, anywhere. Your health, simplified.",
     tags: ["NextJs", "ShadCN", "PostgreSQL", "Supabase"],
-    image: "/src/assets/projects/std.png",
+    image: "/skipthedoctor.png",
     category: "NextJs",
     demoLink: "https://skipthedoctor.ca/",
     githubLink: "#",
@@ -47,7 +47,7 @@ export const projects = [
     description:
       "Streamline your HR processes with our comprehensive human resource management system. Everything you need in one powerful platform.",
     tags: ["React", "GraphQL", "PostgreSQL", "Ant UI"],
-    image: "/src/assets/projects/hrms.png",
+    image: "/hrms.png",
     category: "React",
     demoLink: "https://hrms-rwyv.onrender.com/",
     githubLink: "#",
@@ -63,7 +63,7 @@ export const projects = [
     description:
       "Expert care online—book consults, prescription refills, and follow-ups anytime, anywhere. Your health, simplified.",
     tags: ["NextJs", "ShadCN", "PostgreSQL", "Supabase"],
-    image: "/src/assets/projects/stc.png",
+    image: "/skiptheclinic.png",
     category: "NextJs",
     demoLink: "https://skiptheclinic.ca/",
     githubLink: "#",
@@ -79,7 +79,7 @@ export const projects = [
     description:
       "Discover, share, and explore AI prompts with ease. Join a community of creators and innovators.",
     tags: ["NextJs", "ShadCN", "PostgreSQL", "Supabase"],
-    image: "/src/assets/projects/promptopia.png",
+    image: "/promptopia.png",
     category: "NextJs",
     demoLink: "https://promptopia-mauve.vercel.app/",
     githubLink: "#",
@@ -90,7 +90,7 @@ export const projects = [
     description:
       "Eventify is a platform that allows you to discover, share, and explore events with ease. Join a community of creators and innovators.",
     tags: ["NextJs", "ShadCN", "PostgreSQL", "Supabase"],
-    image: "/src/assets/projects/eventify.png",
+    image: "/eventify.png",
     category: "NextJs",
     demoLink: "https://evently-beige-eight.vercel.app/",
     githubLink: "#",
@@ -102,7 +102,7 @@ export const projects = [
     description:
       "A modern and responsive frontend for Nike, built with React, Tailwind CSS, and Framer Motion.",
     tags: ["React", "Tailwind CSS", "Framer Motion"],
-    image: "/src/assets/projects/nike.png",
+    image: "/nike.png",
     category: "React",
     demoLink: "https://nike-frontend-one.vercel.app/",
     githubLink: "#",
