@@ -1,3 +1,115 @@
+export const projects = [
+  {
+    title: "VCET-Connect",
+    description:
+      "A comprehensive academic management platform designed for VCET's ecosystem. Streamline administrative processes, enhance communication, and maintain transparency across all departments.",
+    tags: ["React", "Node.js", "MongoDB", "Tailwind"],
+    image: "/src/assets/projects/vcetconnect.png",
+    category: "React",
+    demoLink: "https://vcet-connect.onrender.com/",
+    githubLink: "#",
+    features: [
+      "Leave Management",
+      "OD Management",
+      "Defaulter Management",
+      "CGPA Calculator",
+    ],
+  },
+  {
+    title: "Urban Uplift",
+    description:
+      "A platform to report issues, collaborate with authorities, and make your community better. Together, we can create positive change.",
+    tags: ["React", "Node.js", "MongoDB", "React Prime"],
+    image: "/src/assets/projects/urbanuplift.png",
+    category: "React",
+    demoLink: "https://themainone.onrender.com/",
+    githubLink: "#",
+    features: ["Issue Reporting", "Collaboration", "Positive Change"],
+  },
+  {
+    title: "Skip The Doctor",
+    description:
+      "Expert care online—book consults, prescription refills, and follow-ups anytime, anywhere. Your health, simplified.",
+    tags: ["NextJs", "ShadCN", "PostgreSQL", "Supabase"],
+    image: "/src/assets/projects/std.png",
+    category: "NextJs",
+    demoLink: "https://skipthedoctor.ca/",
+    githubLink: "#",
+    features: [
+      "Book Consults",
+      "Prescription Refills",
+      "Follow-ups",
+      "Your Health",
+    ],
+  },
+  {
+    title: "HR Management System",
+    description:
+      "Streamline your HR processes with our comprehensive human resource management system. Everything you need in one powerful platform.",
+    tags: ["React", "GraphQL", "PostgreSQL", "Ant UI"],
+    image: "/src/assets/projects/hrms.png",
+    category: "React",
+    demoLink: "https://hrms-rwyv.onrender.com/",
+    githubLink: "#",
+    features: [
+      "Employee Management",
+      "Leave Management",
+      "Performance Management",
+      "Payroll Management",
+    ],
+  },
+  {
+    title: "Skip The Clinic",
+    description:
+      "Expert care online—book consults, prescription refills, and follow-ups anytime, anywhere. Your health, simplified.",
+    tags: ["NextJs", "ShadCN", "PostgreSQL", "Supabase"],
+    image: "/src/assets/projects/stc.png",
+    category: "NextJs",
+    demoLink: "https://skiptheclinic.ca/",
+    githubLink: "#",
+    features: [
+      "Book Consults",
+      "Prescription Refills",
+      "Follow-ups",
+      "Your Health",
+    ],
+  },
+  {
+    title: "Promptopia",
+    description:
+      "Discover, share, and explore AI prompts with ease. Join a community of creators and innovators.",
+    tags: ["NextJs", "ShadCN", "PostgreSQL", "Supabase"],
+    image: "/src/assets/projects/promptopia.png",
+    category: "NextJs",
+    demoLink: "https://promptopia-mauve.vercel.app/",
+    githubLink: "#",
+    features: ["Discover", "Share", "Explore", "Community"],
+  },
+  {
+    title: "Eventify",
+    description:
+      "Eventify is a platform that allows you to discover, share, and explore events with ease. Join a community of creators and innovators.",
+    tags: ["NextJs", "ShadCN", "PostgreSQL", "Supabase"],
+    image: "/src/assets/projects/eventify.png",
+    category: "NextJs",
+    demoLink: "https://evently-beige-eight.vercel.app/",
+    githubLink: "#",
+    features: ["Discover", "Share", "Explore", "Community"],
+  },
+
+  {
+    title: "Nike Frontend",
+    description:
+      "A modern and responsive frontend for Nike, built with React, Tailwind CSS, and Framer Motion.",
+    tags: ["React", "Tailwind CSS", "Framer Motion"],
+    image: "/src/assets/projects/nike.png",
+    category: "React",
+    demoLink: "https://nike-frontend-one.vercel.app/",
+    githubLink: "#",
+    features: ["Modern", "Responsive", "Framer Motion", "Tailwind CSS"],
+  },
+];
+
 export const PORTFOLIO_SECTIONS = {
   HERO: "hero",
   ABOUT: "about",
@@ -9,19 +121,42 @@ export const PORTFOLIO_SECTIONS = {
 
 export const NAV_LINKS = [
   { name: "Home", path: "/" },
-  { name: "Blog", path: "/blog" },
   { name: "About", path: "/about" },
+  { name: "Skills", path: "/skills" },
   { name: "Projects", path: "/projects" },
   { name: "Experience", path: "/experience" },
+  { name: "Blog", path: "/blog" },
   { name: "Contact", path: "/contact" },
-
 ];
 
 export const SOCIAL_LINKS = [
-  { name: "GitHub", icon: "pi pi-github", url: "#" },
-  { name: "LinkedIn", icon: "pi pi-linkedin", url: "#" },
-  { name: "Twitter", icon: "pi pi-twitter", url: "#" },
-  { name: "Instagram", icon: "pi pi-instagram", url: "#" },
+  { name: "GitHub", icon: "pi pi-github", url: "https://github.com/Navin2k4" },
+  {
+    name: "GeeksForGeeks",
+    icon: "pi pi-database",
+    url: "https://auth.geeksforgeeks.org/user/NavinKumarMNK",
+  },
+  {
+    name: "HackerRank",
+    icon: "pi pi-verified",
+    url: "https://www.hackerrank.com/profile/22cseb48_Navin",
+  },
+  {
+    name: "LeetCode",
+    icon: "pi pi-code",
+    url: "https://leetcode.com/u/navinkumaran2004/",
+  },
+  {
+    name: "LinkedIn",
+    icon: "pi pi-linkedin",
+    url: "https://www.linkedin.com/in/navin2004/",
+  },
+  { name: "Twitter", icon: "pi pi-twitter", url: "https://x.com/navin_2k4" },
+  {
+    name: "Instagram",
+    icon: "pi pi-instagram",
+    url: "https://www.instagram.com/navin_2k4/",
+  },
 ];
 
 export const SKILLS = {
@@ -44,40 +179,38 @@ export const fadeInVariants = {
 };
 
 export const footerLinks = {
-    portfolio: [
-      { name: "Projects", path: "/projects" },
-      { name: "Skills", path: "/skills" },
-      { name: "Experience", path: "/experience" },
-      { name: "Testimonials", path: "/testimonials" },
-    ],
-    resources: [
-      { name: "Blog", path: "/blog" },
-    ]
-  };
+  portfolio: [
+    { name: "Projects", path: "/projects" },
+    { name: "Skills", path: "/skills" },
+    { name: "Experience", path: "/experience" },
+    // { name: "Testimonials", path: "/testimonials" },
+  ],
+  resources: [{ name: "Blog", path: "/blog" }],
+};
 
-  export  const socialLinks = [
-    {
-      name: "GitHub",
-      icon: "pi pi-github",
-      url: "https://github.com/yourusername",
-      color: "hover:text-gray-100",
-    },
-    {
-      name: "LinkedIn",
-      icon: "pi pi-linkedin",
-      url: "https://linkedin.com/in/yourusername",
-      color: "hover:text-blue-400",
-    },
-    {
-      name: "Twitter",
-      icon: "pi pi-twitter",
-      url: "https://twitter.com/yourusername",
-      color: "hover:text-blue-400",
-    },
-    {
-      name: "Instagram",
-      icon: "pi pi-instagram",
-      url: "https://instagram.com/yourusername",
-      color: "hover:text-pink-400",
-    },
-  ];
+export const socialLinks = [
+  {
+    name: "LinkedIn",
+    icon: "pi pi-linkedin",
+    url: "https://www.linkedin.com/in/navin2004/",
+    color: "hover:text-blue-400",
+  },
+  {
+    name: "GitHub",
+    icon: "pi pi-github",
+    url: "https://github.com/Navin2k4",
+    color: "hover:text-gray-100",
+  },
+  {
+    name: "Twitter",
+    icon: "pi pi-twitter",
+    url: "https://x.com/navin_2k4",
+    color: "hover:text-blue-400",
+  },
+  {
+    name: "Instagram",
+    icon: "pi pi-instagram",
+    url: "https://www.instagram.com/navin_2k4/",
+    color: "hover:text-pink-400",
+  },
+];

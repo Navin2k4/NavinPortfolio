@@ -4,6 +4,7 @@ import dotenv from "dotenv";
 import cookieParser from "cookie-parser";
 import path from "path";
 import cors from "cors";
+import contactRoutes from "./routes/contact.js";
 dotenv.config();
 
 mongoose
@@ -28,6 +29,8 @@ app.use(express.static(path.join(__dirname, "client", "dist")));
 app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "client", "dist", "index.html"));
 });
+
+app.use("/api/contact", contactRoutes);
 
 app.use((err, req, res, next) => {
   const statusCode = err.statusCode || 500;

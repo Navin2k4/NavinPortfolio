@@ -5,7 +5,7 @@ import { SOCIAL_LINKS, footerLinks } from "../utils/utilities";
 
 const Footer = () => {
   const location = useLocation();
-  const disabledPages = ["/contact",'/admin'];
+  const disabledPages = ["/contact", "/admin"];
 
   if (disabledPages.includes(location.pathname)) {
     return null;
@@ -65,7 +65,7 @@ const Footer = () => {
             transition={{ duration: 0.5 }}
           >
             <Link to="/" className="text-3xl font-bold gradient-text">
-              NK
+              <img src={"/iconround.png"} alt="Logo" className="w-12 h-12" />
             </Link>
             <p className="text-gray-400 mt-2">
               Crafting digital experiences with passion and precision.
@@ -94,7 +94,9 @@ const Footer = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            <h3 className="text-white text-lg font-semibold mb-4">Portfolio</h3>
+            <h3 className="text-white text-lg font-semibold mb-4">
+              Quick Links
+            </h3>
             <ul className="space-y-2">
               {footerLinks.portfolio.map((link, index) => (
                 <motion.li

@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 const BlogPage = () => {
   const [hoveredPost, setHoveredPost] = useState(null);
   const [selectedCategory, setSelectedCategory] = useState("All");
+  const [yetToCome, setYetToCome] = useState(true);
 
   const blogPosts = [
     {
@@ -81,179 +82,72 @@ const BlogPage = () => {
       </div>
 
       <div className="container mx-auto px-4 relative">
-        {/* Hero Section */}
-        <div className="grid md:grid-cols-2 gap-12 mb-20">
-          {/* Left Side - Title and Categories */}
+        <div className="flex flex-col items-center justify-center min-h-[60vh] relative">
+          {/* Decorative elements */}
+          <div className="absolute -top-20 left-1/2 -translate-x-1/2 w-40 h-40 bg-blue-500/20 rounded-full blur-3xl" />
+          <div className="absolute -top-10 left-1/2 -translate-x-1/2 w-32 h-32 bg-purple-500/20 rounded-full blur-2xl" />
+
           <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5 }}
-            className="flex flex-col justify-center"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="text-center relative"
           >
-            <h1 className="text-6xl md:text-7xl font-bold text-white mb-6">
-              Blog & Insights
-            </h1>
-            <p className="text-gray-400 text-xl mb-8">
-              Dive into my thoughts and experiences about web development,
-              design, and technology.
-            </p>
+            <div className="inline-block relative px-4">
+              <span className="absolute -inset-4 rounded-lg bg-gradient-to-r from-blue-600 via-purple-600 to-blue-600 opacity-20 blur-lg" />
+              <h1 className="relative text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold mb-6">
+                <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-purple-400 to-blue-400">
+                  Blog
+                </span>
+                <br />
+                <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-500 via-purple-500 to-blue-500">
+                  Coming Soon
+                </span>
+              </h1>
 
-            {/* Category Filter */}
-            <div className="flex flex-wrap gap-3">
-              {categories.map((category, index) => (
-                <motion.button
-                  key={category}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: index * 0.1 }}
-                  whileHover={{ y: -2 }}
-                  whileTap={{ scale: 0.95 }}
-                  onClick={() => setSelectedCategory(category)}
-                  className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 ${
-                    selectedCategory === category
-                      ? "bg-blue-500 text-white"
-                      : "bg-gray-800 text-gray-400 hover:bg-gray-700"
-                  }`}
-                >
-                  {category}
-                </motion.button>
-              ))}
-            </div>
-          </motion.div>
-
-          {/* Right Side - Featured Post */}
-          {featuredPost && (
-            <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5 }}
-              className="relative"
-              onHoverStart={() => setHoveredPost("featured")}
-              onHoverEnd={() => setHoveredPost(null)}
-            >
-              <div className="glass-effect rounded-2xl overflow-hidden h-full">
-                <div className="relative h-full">
-                  <motion.img
-                    src={featuredPost.image}
-                    alt={featuredPost.title}
-                    className="w-full h-full object-cover"
-                    animate={{
-                      scale: hoveredPost === "featured" ? 1.05 : 1,
-                    }}
-                    transition={{ duration: 0.5 }}
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/70 to-transparent"></div>
-                  <div className="absolute inset-0 p-8 flex flex-col justify-end">
-                    <span className="px-3 py-1 bg-blue-500 text-white rounded-lg text-sm w-fit mb-4">
-                      {featuredPost.category}
-                    </span>
-                    <h2 className="text-3xl font-bold text-white mb-3">
-                      {featuredPost.title}
-                    </h2>
-                    <p className="text-gray-300 mb-4">{featuredPost.excerpt}</p>
-                    <div className="flex items-center justify-between text-sm">
-                      <span className="text-gray-400">{featuredPost.date}</span>
-                      <span className="text-blue-400">
-                        {featuredPost.readTime}
-                      </span>
-                    </div>
-                  </div>
-                </div>
+              {/* Decorative dots */}
+              <div className="absolute -top-6 -right-6 w-12 h-12 grid grid-cols-2 gap-1">
+                <div className="w-1.5 h-1.5 rounded-full bg-blue-400/40" />
+                <div className="w-1.5 h-1.5 rounded-full bg-purple-400/40" />
+                <div className="w-1.5 h-1.5 rounded-full bg-purple-400/40" />
+                <div className="w-1.5 h-1.5 rounded-full bg-blue-400/40" />
               </div>
-            </motion.div>
-          )}
-        </div>
 
-        {/* Blog Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <AnimatePresence mode="wait">
-            {filteredPosts.slice(1).map((post, index) => (
+              {/* Bottom accent line */}
               <motion.div
-                key={post.title}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -20 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="group"
-                onHoverStart={() => setHoveredPost(index)}
-                onHoverEnd={() => setHoveredPost(null)}
-              >
-                <div className="glass-effect rounded-xl overflow-hidden">
-                  <div className="relative h-48 overflow-hidden">
-                    <motion.img
-                      src={post.image}
-                      alt={post.title}
-                      className="absolute inset-0 w-full h-full object-cover"
-                      animate={{
-                        scale: hoveredPost === index ? 1.1 : 1,
-                      }}
-                      transition={{ duration: 0.5 }}
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/50 to-transparent"></div>
-                    <div className="absolute bottom-4 left-4">
-                      <span className="px-3 py-1 bg-blue-500 text-white rounded-lg text-sm">
-                        {post.category}
-                      </span>
-                    </div>
-                  </div>
-                  <div className="p-6">
-                    <h3 className="text-xl font-bold text-white mb-3 group-hover:text-blue-400 transition-colors">
-                      {post.title}
-                    </h3>
-                    <p className="text-gray-400 mb-4 line-clamp-2">
-                      {post.excerpt}
-                    </p>
-                    <div className="flex items-center justify-between text-sm">
-                      <span className="text-gray-400">{post.date}</span>
-                      <motion.button
-                        whileHover={{ x: 5 }}
-                        whileTap={{ scale: 0.95 }}
-                        className="flex items-center text-blue-400 hover:text-blue-300"
-                      >
-                        Read More
-                        <i className="pi pi-arrow-right ml-2"></i>
-                      </motion.button>
-                    </div>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </AnimatePresence>
-        </div>
-
-        {/* Newsletter Section */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.5, delay: 0.8 }}
-          className="mt-20"
-        >
-          <div className="glass-effect rounded-2xl p-12 relative overflow-hidden">
-            <div className="relative z-10">
-              <h3 className="text-3xl font-bold text-white mb-4">
-                Stay Updated with Latest Insights
-              </h3>
-              <p className="text-gray-300 mb-8">
-                Subscribe to my newsletter and never miss out on the latest
-                articles and tutorials.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 max-w-2xl mx-auto">
-                <input
-                  type="email"
-                  placeholder="Enter your email"
-                  className="flex-1 px-6 py-3 bg-white/10 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                />
-                <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="px-8 py-3 bg-blue-500 hover:bg-blue-600 text-white rounded-xl font-medium transition-colors"
-                >
-                  Subscribe
-                </motion.button>
-              </div>
+                initial={{ scaleX: 0 }}
+                animate={{ scaleX: 1 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+                className="absolute -bottom-4 left-1/2 -translate-x-1/2 w-48 h-1 bg-gradient-to-r from-blue-500 via-purple-500 to-blue-500 rounded-full blur-sm"
+              />
             </div>
-          </div>
-        </motion.div>
+
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              className="text-gray-400 text-lg sm:text-xl max-w-2xl mx-auto mt-8 px-4"
+            >
+              Stay tuned for exciting articles about web development, design,
+              and technology. We're crafting something amazing for you!
+            </motion.p>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.6 }}
+              className="mt-12 flex flex-wrap justify-center gap-4"
+            >
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="px-6 py-3 bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-xl text-sm font-medium hover:from-blue-500 hover:to-blue-600 transition-all duration-300 cursor-pointer shadow-lg shadow-blue-500/25"
+              >
+                <a href="/contact">Notify Me</a>
+              </motion.div>
+            </motion.div>
+          </motion.div>
+        </div>
       </div>
     </div>
   );

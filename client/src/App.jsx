@@ -35,7 +35,7 @@ function App() {
                 <Route path="/skills" element={<SkillsPage />} />
                 <Route path="/experience" element={<ExperiencePage />} />
                 <Route path="/blog" element={<BlogPage />} />
-                <Route path="/testimonials" element={<TestimonialsPage />} />
+                {/* <Route path="/testimonials" element={<TestimonialsPage />} /> */}
                 <Route path="/contact" element={<ContactPage />} />
                 <Route path="/admin" element={<AdminLoginPage />} />
                 <Route path="/admin/dashboard" element={<AdminDashboard />} />

@@ -1,58 +1,58 @@
 import React, { useState, useEffect } from "react";
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
-import { SKILLS, SOCIAL_LINKS, scrollToSection } from "../utils/utilities";
+import { SOCIAL_LINKS, scrollToSection } from "../utils/utilities";
 
 const HeroSection = () => {
-    const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
-    // Mouse movement tracking
-    useEffect(() => {
-      const handleMouseMove = (e) => {
-        setMousePosition({
-          x: (e.clientX / window.innerWidth - 0.5) * 2,
-          y: (e.clientY / window.innerHeight - 0.5) * 2,
-        });
-      };
-  
-      window.addEventListener("mousemove", handleMouseMove);
-      return () => window.removeEventListener("mousemove", handleMouseMove);
-    }, []);
-  
-    // Smooth spring animation for rotation
-    const rotateX = useSpring(useMotionValue(0), {
-      stiffness: 100,
-      damping: 30,
-    });
-    const rotateY = useSpring(useMotionValue(0), {
-      stiffness: 100,
-      damping: 30,
-    });
-  
-    useEffect(() => {
-      rotateX.set(mousePosition.y * 45); // 45 degrees max rotation
-      rotateY.set(mousePosition.x * 45);
-    }, [mousePosition]);
-  
-    const containerVariants = {
-      hidden: { opacity: 0 },
-      visible: {
-        opacity: 1,
-        transition: {
-          staggerChildren: 0.3,
-        },
-      },
+  // Mouse movement tracking
+  useEffect(() => {
+    const handleMouseMove = (e) => {
+      setMousePosition({
+        x: (e.clientX / window.innerWidth - 0.5) * 2,
+        y: (e.clientY / window.innerHeight - 0.5) * 2,
+      });
     };
-  
-    const itemVariants = {
-      hidden: { opacity: 0, y: 20 },
-      visible: {
-        opacity: 1,
-        y: 0,
-        transition: {
-          duration: 0.5,
-        },
+
+    window.addEventListener("mousemove", handleMouseMove);
+    return () => window.removeEventListener("mousemove", handleMouseMove);
+  }, []);
+
+  // Smooth spring animation for rotation
+  const rotateX = useSpring(useMotionValue(0), {
+    stiffness: 100,
+    damping: 30,
+  });
+  const rotateY = useSpring(useMotionValue(0), {
+    stiffness: 100,
+    damping: 30,
+  });
+
+  useEffect(() => {
+    rotateX.set(mousePosition.y * 45); // 45 degrees max rotation
+    rotateY.set(mousePosition.x * 45);
+  }, [mousePosition]);
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.3,
       },
-    };
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.5,
+      },
+    },
+  };
   return (
     <section className="min-h-screen flex items-center relative bg-gray-900 text-white overflow-hidden">
       {/* Background Image with Overlay */}
@@ -302,8 +302,13 @@ const HeroSection = () => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <span>Get in Touch</span>
-              <i className="pi pi-arrow-right"></i>
+              <a
+                target="_blank"
+                href="https://drive.google.com/file/d/1g-PJLVCqjlXJIXUe0xaZNH5hf3OjjMLu/view?usp=sharing"
+              >
+                <span>Get in Touch</span>
+              </a>
+                <i className="pi pi-arrow-right"></i>
             </motion.button>
             <motion.button
               onClick={() => scrollToSection("projects")}
@@ -311,8 +316,10 @@ const HeroSection = () => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <span>View Resume</span>
-              <i className="pi pi-external-link"></i>
+              <a href="/resume">
+                <span>View Resume</span>
+              </a>
+                <i className="pi pi-external-link"></i>
             </motion.button>
           </motion.div>
 
