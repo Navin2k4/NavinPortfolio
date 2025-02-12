@@ -104,7 +104,7 @@ const ProjectsSlider = () => {
         </motion.div>
 
         {/* Second Row - Moving Left */}
-        {/* <motion.div
+        <motion.div
           style={{ x: leftMovement }}
           className="flex gap-3 sm:gap-6 px-2 sm:px-4 will-change-transform"
         >
@@ -138,7 +138,7 @@ const ProjectsSlider = () => {
               </motion.div>
             ))}
           </div>
-        </motion.div> */}
+        </motion.div>
       </div>
     </div>
   );

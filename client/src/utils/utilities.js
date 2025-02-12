@@ -1,5 +1,16 @@
 export const projects = [
   {
+    title: "Urban Uplift",
+    description:
+      "A platform to report issues, collaborate with authorities, and make your community better. Together, we can create positive change.",
+    tags: ["React", "Node.js", "MongoDB", "React Prime"],
+    image: "/urbanuplift.png",
+    category: "React",
+    demoLink: "https://themainone.onrender.com/",
+    githubLink: "#",
+    features: ["Issue Reporting", "Collaboration", "Positive Change"],
+  },
+  {
     title: "VCET-Connect",
     description:
       "A comprehensive academic management platform designed for VCET's ecosystem. Streamline administrative processes, enhance communication, and maintain transparency across all departments.",
@@ -14,17 +25,6 @@ export const projects = [
       "Defaulter Management",
       "CGPA Calculator",
     ],
-  },
-  {
-    title: "Urban Uplift",
-    description:
-      "A platform to report issues, collaborate with authorities, and make your community better. Together, we can create positive change.",
-    tags: ["React", "Node.js", "MongoDB", "React Prime"],
-    image: "/urbanuplift.png",
-    category: "React",
-    demoLink: "https://themainone.onrender.com/",
-    githubLink: "#",
-    features: ["Issue Reporting", "Collaboration", "Positive Change"],
   },
   {
     title: "Skip The Doctor",
