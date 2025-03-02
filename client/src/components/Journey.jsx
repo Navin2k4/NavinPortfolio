@@ -43,9 +43,9 @@ const Journey = () => {
       ],
     },
     {
-      year: "2023",
-      events: [
-        {
+        year: "2023",
+        events: [
+          {
           title: "VCET Connect",
           subtitle: "Full Stack College Management System",
           icon: "pi pi-server",
@@ -60,15 +60,15 @@ const Journey = () => {
         {
           title: "Web Development Intern",
           subtitle: "Teach Nook",
-          icon: "pi pi-globe",
+            icon: "pi pi-globe",
           color: "from-orange-600 to-amber-600",
-        },
-      ],
-    },
+          },
+        ],
+      },
     {
-      year: "2024",
-      events: [
-        {
+        year: "2024",
+        events: [
+          {
           title: "Skip The Doctor",
           subtitle: "Freelance Full Stack Project",
           icon: "pi pi-heart-fill",
@@ -83,15 +83,15 @@ const Journey = () => {
         {
           title: "Technical Trainer",
           subtitle: "Full Stack Development Bootcamp",
-          icon: "pi pi-users",
+            icon: "pi pi-users",
           color: "from-fuchsia-600 to-purple-600",
-        },
-      ],
-    },
+          },
+        ],
+      },
     {
-      year: "2025",
-      events: [
-        {
+        year: "2025",
+        events: [
+          {
           title: "Full Stack Developer",
           subtitle: "Beauroi Technologies",
           icon: "pi pi-code",
@@ -102,9 +102,9 @@ const Journey = () => {
           subtitle: "Enterprise Software Development",
           icon: "pi pi-building",
           color: "from-violet-600 to-purple-600",
-        },
-      ],
-    },
+          },
+        ],
+      },
   ];
 
   // Sort timeline by year in descending order and calculate initial index
@@ -286,38 +286,38 @@ const Journey = () => {
                 transition={{ type: "spring", stiffness: 300, damping: 30 }}
               >
                 {sortedTimeline.map((year, yearIndex) => (
-                  <motion.div
-                    key={yearIndex}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: yearIndex * 0.2 }}
+              <motion.div
+                key={yearIndex}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: yearIndex * 0.2 }}
                     className="relative flex-1"
-                  >
-                    {/* Year Marker */}
+              >
+                {/* Year Marker */}
                     <div className="flex justify-center mb-6">
-                      <div className="flex items-center justify-center w-18 h-12 rounded-2xl bg-white/5 backdrop-blur-sm relative">
-                        {/* Dot on timeline */}
+                  <div className="flex items-center justify-center w-18 h-12 rounded-2xl bg-white/5 backdrop-blur-sm relative">
+                    {/* Dot on timeline */}
                         <div className="absolute -top-[19px] left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-gradient-to-r from-blue-500 to-purple-500" />
-                        <span className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-400">
-                          {year.year}
-                        </span>
-                      </div>
-                    </div>
+                    <span className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-400">
+                      {year.year}
+                    </span>
+                  </div>
+                </div>
 
-                    {/* Events List */}
-                    <div className="space-y-4">
-                      {year.events.map((event, eventIndex) => (
-                        <motion.div
-                          key={eventIndex}
-                          initial={{ opacity: 0, x: -20 }}
-                          animate={{ opacity: 1, x: 0 }}
+                {/* Events List */}
+                <div className="space-y-4">
+                  {year.events.map((event, eventIndex) => (
+                    <motion.div
+                      key={eventIndex}
+                      initial={{ opacity: 0, x: -20 }}
+                      animate={{ opacity: 1, x: 0 }}
                           transition={{
                             delay: yearIndex * 0.2 + eventIndex * 0.1,
                           }}
-                          className="group"
-                        >
-                          <div className="bg-white/5 backdrop-blur-sm rounded-xl p-4 border border-white/10 hover:bg-white/10 transition-all duration-300">
-                            <div className="flex items-center gap-4">
+                      className="group"
+                    >
+                      <div className="bg-white/5 backdrop-blur-sm rounded-xl p-4 border border-white/10 hover:bg-white/10 transition-all duration-300">
+                        <div className="flex items-center gap-4">
                               <motion.div
                                 whileHover={{
                                   scale: 1.15,
@@ -357,21 +357,21 @@ const Journey = () => {
                                   className={`${event.icon} text-white text-lg`}
                                 />
                               </motion.div>
-                              <div>
-                                <h3 className="text-base font-semibold text-white group-hover:text-blue-400 transition-colors">
-                                  {event.title}
-                                </h3>
-                                <p className="text-sm text-gray-400">
-                                  {event.subtitle}
-                                </p>
-                              </div>
-                            </div>
+                          <div>
+                            <h3 className="text-base font-semibold text-white group-hover:text-blue-400 transition-colors">
+                              {event.title}
+                            </h3>
+                            <p className="text-sm text-gray-400">
+                              {event.subtitle}
+                            </p>
                           </div>
-                        </motion.div>
-                      ))}
-                    </div>
-                  </motion.div>
-                ))}
+                        </div>
+                      </div>
+                    </motion.div>
+                  ))}
+                </div>
+              </motion.div>
+            ))}
               </motion.div>
             </div>
           </div>

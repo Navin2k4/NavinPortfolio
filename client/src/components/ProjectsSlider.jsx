@@ -1,31 +1,10 @@
-import React, { useRef } from "react";
-import { motion, useScroll, useTransform, useSpring } from "framer-motion";
+import React from "react";
+import { motion } from "framer-motion";
 import { projects } from "../utils/utilities";
 
 const ProjectsSlider = () => {
-  const containerRef = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start end", "end start"],
-  });
-
-  // Optimized spring settings for smoother animation
-  const smoothProgress = useSpring(scrollYProgress, {
-    damping: 20,
-    mass: 0.5,
-    stiffness: 70,
-    restDelta: 0.001,
-  });
-
-  // Adjusted transform values for smoother movement
-  const rightMovement = useTransform(smoothProgress, [0, 1], ["5%", "-55%"]);
-  const leftMovement = useTransform(smoothProgress, [0, 1], ["-55%", "5%"]);
-
   return (
-    <div
-      ref={containerRef}
-      className="relative py-12 sm:py-20 overflow-hidden bg-transparent"
-    >
+    <div className="relative py-12 sm:py-20 overflow-hidden bg-transparent">
       {/* Background Elements */}
       <div className="absolute inset-0 bg-gray-900 bg-[size:40px_40px] sm:bg-[size:60px_60px]" />
       <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-t from-gray-900/0 via-gray-900/50 to-gray-900/0 backdrop-blur-3xl" />
@@ -68,7 +47,15 @@ const ProjectsSlider = () => {
       <div className="relative">
         {/* First Row - Moving Right */}
         <motion.div
-          style={{ x: rightMovement }}
+          animate={{
+            x: ["-5%", "-55%"],
+          }}
+          transition={{
+            duration: 20,
+            repeat: Infinity,
+            repeatType: "reverse",
+            ease: "linear",
+          }}
           className="flex gap-3 sm:gap-6 mb-3 sm:mb-6 px-2 sm:px-4 will-change-transform"
         >
           <div className="flex gap-3 sm:gap-6">
@@ -105,7 +92,15 @@ const ProjectsSlider = () => {
 
         {/* Second Row - Moving Left */}
         <motion.div
-          style={{ x: leftMovement }}
+          animate={{
+            x: ["-55%", "-5%"],
+          }}
+          transition={{
+            duration: 20,
+            repeat: Infinity,
+            repeatType: "reverse",
+            ease: "linear",
+          }}
           className="flex gap-3 sm:gap-6 px-2 sm:px-4 will-change-transform"
         >
           <div className="flex gap-3 sm:gap-6">
