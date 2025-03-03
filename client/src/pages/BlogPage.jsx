@@ -9,6 +9,7 @@ const BlogPage = () => {
   const { toggleNavbar } = useNavbar();
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [searchTerm, setSearchTerm] = useState("");
+  const [dateSort, setDateSort] = useState("newest");
 
   // Extract unique categories and count posts in each
   const categories = [
@@ -26,15 +27,22 @@ const BlogPage = () => {
     return acc;
   }, {});
 
-  // Filter posts based on category and search
-  const filteredPosts = blogPosts.filter((post) => {
-    const matchesCategory =
-      selectedCategory === "All" || post.tags.includes(selectedCategory);
-    const matchesSearch =
-      post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      post.excerpt.toLowerCase().includes(searchTerm.toLowerCase());
-    return matchesCategory && matchesSearch;
-  });
+  // Filter and sort posts based on category, search, and date
+  const filteredPosts = blogPosts
+    .filter((post) => {
+      const matchesCategory =
+        selectedCategory === "All" || post.tags.includes(selectedCategory);
+      const matchesSearch =
+        post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        post.excerpt.toLowerCase().includes(searchTerm.toLowerCase());
+
+      return matchesCategory && matchesSearch;
+    })
+    .sort((a, b) => {
+      const dateA = new Date(a.date);
+      const dateB = new Date(b.date);
+      return dateSort === "newest" ? dateB - dateA : dateA - dateB;
+    });
 
   useEffect(() => {
     toggleNavbar(true);
@@ -73,6 +81,35 @@ const BlogPage = () => {
                   d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
                 />
               </svg>
+            </div>
+
+            {/* Date Sort */}
+            <div className="bg-gray-800/30 rounded-xl p-4 backdrop-blur-sm border border-gray-700/50">
+              <h3 className="text-lg font-semibold text-gray-200 mb-3">
+                Sort by Date
+              </h3>
+              <div className="flex flex-wrap gap-2">
+                <button
+                  onClick={() => setDateSort("newest")}
+                  className={`flex items-center px-3 py-1.5 rounded-lg text-sm transition-all duration-300 ${
+                    dateSort === "newest"
+                      ? "bg-blue-500/20 text-blue-400 border border-blue-500/50"
+                      : "text-gray-400 hover:bg-gray-700/50"
+                  }`}
+                >
+                  Newest First
+                </button>
+                <button
+                  onClick={() => setDateSort("oldest")}
+                  className={`flex items-center px-3 py-1.5 rounded-lg text-sm transition-all duration-300 ${
+                    dateSort === "oldest"
+                      ? "bg-blue-500/20 text-blue-400 border border-blue-500/50"
+                      : "text-gray-400 hover:bg-gray-700/50"
+                  }`}
+                >
+                  Oldest First
+                </button>
+              </div>
             </div>
 
             {/* Categories */}

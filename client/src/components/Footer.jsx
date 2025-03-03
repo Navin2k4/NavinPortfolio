@@ -53,6 +53,9 @@ const Footer = () => {
           />
         </svg>
       </div>
+      <div className="absolute inset-0 opacity-10 pointer-events-none overflow-hidden">
+        <img src={"/iconround.png"} alt="Logo" className="absolute -bottom-10 -right-10 w-70 h-70 object-contain" />
+      </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Top Section */}
@@ -64,8 +67,8 @@ const Footer = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <Link to="/" className="text-3xl font-bold gradient-text">
-              <img src={"/iconround.png"} alt="Logo" className="w-12 h-12" />
+            <Link to="/" className="text-3xl font-bold text-blue-400">
+              Navin Kumaran
             </Link>
             <p className="text-gray-400 mt-2">
               Crafting digital experiences with passion and precision.
