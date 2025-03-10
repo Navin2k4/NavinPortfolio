@@ -5,9 +5,14 @@ import { SOCIAL_LINKS, footerLinks } from "../utils/utilities";
 
 const Footer = () => {
   const location = useLocation();
-  const disabledPages = ["/contact", "/admin"];
+  const disabledPages = ["/contact", "/admin", "/404"];
 
-  if (disabledPages.includes(location.pathname)) {
+  if (
+    disabledPages.includes(location.pathname) ||
+    !location.pathname.match(
+      /^\/($|about|projects|skills|experience|blog|admin\/dashboard)/
+    )
+  ) {
     return null;
   }
 
@@ -54,7 +59,11 @@ const Footer = () => {
         </svg>
       </div>
       <div className="absolute inset-0 opacity-10 pointer-events-none overflow-hidden">
-        <img src={"/iconround.png"} alt="Logo" className="absolute -bottom-10 -right-10 w-70 h-70 object-contain" />
+        <img
+          src={"/iconround.png"}
+          alt="Logo"
+          className="absolute -bottom-10 -right-10 w-70 h-70 object-contain"
+        />
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">

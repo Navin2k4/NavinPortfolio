@@ -303,8 +303,7 @@ const HeroSection = () => {
               whileTap={{ scale: 0.95 }}
             >
               <a
-                target="_blank"
-                href="https://drive.google.com/file/d/1g-PJLVCqjlXJIXUe0xaZNH5hf3OjjMLu/view?usp=sharing"
+                href="/contact"
               >
                 <span>Get in Touch</span>
               </a>
@@ -316,8 +315,10 @@ const HeroSection = () => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <a href="/resume">
-                <span>View Resume</span>
+              <a 
+              target="_blank"
+              href="https://drive.google.com/file/d/1g-PJLVCqjlXJIXUe0xaZNH5hf3OjjMLu/view?usp=sharing">
+                <span>View CV</span>
               </a>
                 <i className="pi pi-external-link"></i>
             </motion.button>

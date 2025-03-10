@@ -8,8 +8,6 @@ const AboutPage = () => {
       major: "Computer Science and Engineering",
       school: "Velemmal College of Engineering and Technology",
       period: "2022 - 2026",
-      description:
-        "Focusing on software engineering, web development, and problem solving.",
       achievements: [
         "CGPA: 8.7/10",
         "NSS Volunteer",

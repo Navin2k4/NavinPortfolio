@@ -8,6 +8,7 @@ import { HelmetProvider } from "react-helmet-async";
 import NavBar from "./components/NavBar";
 import Footer from "./components/Footer";
 import ScrollToTop from "./components/ScrollToTop";
+import { Analytics } from "@vercel/analytics/react";
 
 // Main Pages
 import HomePage from "./pages/HomePage";
@@ -21,6 +22,7 @@ import TestimonialsPage from "./pages/TestimonialsPage";
 import ContactPage from "./pages/ContactPage";
 import AdminLoginPage from "./pages/AdminLoginPage";
 import AdminDashboard from "./pages/AdminDashboard";
+import NotFound from "./pages/NotFound";
 
 const AppContent = () => {
   const { isNavbarVisible } = useNavbar();
@@ -41,6 +43,8 @@ const AppContent = () => {
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/admin" element={<AdminLoginPage />} />
           <Route path="/admin/dashboard" element={<AdminDashboard />} />
+          <Route path="/404" element={<NotFound />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
       <Footer />
