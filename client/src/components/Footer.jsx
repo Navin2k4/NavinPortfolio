@@ -191,7 +191,7 @@ const Footer = () => {
 
         {/* Bottom Section */}
         <motion.div
-          className="border-t border-gray-800 py-8"
+          className="py-8"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5, delay: 0.8 }}

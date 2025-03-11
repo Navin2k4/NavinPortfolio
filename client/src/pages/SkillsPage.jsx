@@ -9,11 +9,11 @@ const SkillsPage = () => {
       textColor: "text-[#ffa116]",
       profileUrl: "https://leetcode.com/u/navinkumaran2004/",
       primaryStats: {
-        solved: 180,
-        accaptance: "78.17%",
+        solved: 207,
+        accaptance: "77.18%",
       },
       secondaryStats: {
-        rank: 646587,
+        rank: "5,51,526",
         badges: 2,
       },
     },
@@ -23,12 +23,12 @@ const SkillsPage = () => {
       textColor: "text-white",
       profileUrl: "https://www.hackerrank.com/profile/22cseb48_Navin",
       primaryStats: {
-        solved: 89,
-        score: 4251,
+        solved: 88,
+        score: 249,
       },
       secondaryStats: {
         certification: "Python(Basic)",
-        badges: 5,
+        "Institute rank": 61,
       },
     },
 
@@ -39,10 +39,10 @@ const SkillsPage = () => {
       profileUrl: "https://www.geeksforgeeks.org/user/navinkumaran2004/",
       primaryStats: {
         solved: 59,
-        codingScore: 142,
+        badges: 5,
       },
       secondaryStats: {
-        instituteRank: "97",
+        hackos: "4260",
         language: "Java",
       },
     },
@@ -66,8 +66,8 @@ const SkillsPage = () => {
       textColor: "text-white",
       profileUrl: "https://www.linkedin.com/in/navin2004/",
       primaryStats: {
-        connections: "500+",
-        followers: 809,
+        connections: "800+",
+        followers: "900+",
       },
       secondaryStats: {
         posts: 24,
@@ -165,7 +165,7 @@ const SkillsPage = () => {
           {Object.entries(data.secondaryStats).map(([key, value]) => (
             <div key={key} className="text-center">
               <p className="text-base font-semibold text-gray-200">{value}</p>
-              <p className="text-xs text-gray-400 capitalize">
+              <p className="text-xs text-gray-300 capitalize">
                 {key.replace(/([A-Z])/g, " $1").trim()}
               </p>
             </div>

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import { SOCIAL_LINKS, scrollToSection } from "../utils/utilities";
+import CallToAction from "./CallToAction";
 
 const HeroSection = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -206,12 +207,14 @@ const HeroSection = () => {
       </motion.div>
 
       <div className="container mx-auto px-4 z-10">
+        
         <motion.div
           className="max-w-8xl mx-auto flex flex-col justify-center min-h-screen"
           variants={containerVariants}
           initial="hidden"
           animate="visible"
         >
+
           {/* Modern animated element instead of </> */}
           <motion.div
             className="text-5xl mb-8 relative"
